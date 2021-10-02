@@ -9,7 +9,7 @@ import (
 
 func main() {
 	//全局控制上下文 及 wait group
-	ctx := worker.GetContext(10 * time.Millisecond)
+	ctx := worker.GetContext(10 * time.Second)
 	awg := sync.WaitGroup{}
 
 	// 服务启动
