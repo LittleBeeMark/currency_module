@@ -172,13 +172,7 @@ func StartWorkPool(ctx *Context, currencyCount int) *WorkPool {
 
 	wp.Wg.Add(currencyCount)
 	for i := 0; i < currencyCount; i++ {
-		go func() {
-			defer wp.Wg.Done()
-
-			for w := range wp.WorkCh {
-				w.Do(ctx)
-			}
-		}()
+	
 	}
 
 	return &wp
